@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+
+
+ 
+ <header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading"> O maior site de Eventos do país</div>
+        <div class="masthead-heading text-uppercase">Go Party!</div>
+        <div class="col-md-4">
+          <form class="form-inline " >
+            <div class="form-group mx-sm-8 mb-2">
+              <!-- <input class="form-control" type="search" placeholder="Search" aria-label="Search"> -->
+              <input type="text" class="form-control" placeholder="Buscar" id="filtro" name="filtro" [(ngModel)]="filtro" />
+            </div>
+            <button type="button" class="btn btn-primary mb-2" (click)="buscar()">Buscar</button>
+          </form>
+        </div>
+    </div>
+</header>
+            
+             <section class="page-section bg-light" id="portfolio">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Eventos</h2>
+                        <h3 class="section-subheading text-muted">Os melhores eventos do país estão aqui:</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let evento of eventosFiltro">
+                            <!-- Portfolio item 1-->
+                            <div class="portfolio-item"  >
+                                <a class="portfolio-link" >
+                                    <img class="card-img-top" src="{{ evento.urlImagem }}" width="500" height="320" alt="..." />
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">{{ evento.atracao }}</div>
+                                    <br>
+                                    <div class="small text-muted">{{ evento.data | date : 'dd/MM/yyyy'}}</div>
+                                    <p class="card-text"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                      </svg> {{ evento.estabelecimento.nome }}</p>
+                                     
+                                      <a class="btn btn-primary" routerLink="/home-detalhe/{{evento.id}}">Saiba Mais</a>
+                                      <button type="button" class="btn btn-light btn-lg" mat-icon-button (click)="curtir(evento.id , evento.id)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                        </svg>  {{ evento.curtidas }}
+                                      </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+      
+             
+ <app-footer></app-footer>
+ 
+

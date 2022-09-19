@@ -1,0 +1,41 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#!">Go Party!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li *ngIf="!logado()" class="nav-item"><a class="nav-link" routerLink="/registrar">Cadastre-se</a></li>
+                <li *ngIf="!logado()" class="nav-item"><a class="nav-link" routerLink="/login">Acesse sua conta</a></li>
+                <button  *ngIf="logado()" routerLink="/dashboard">
+                    <mat-icon>dashboard</mat-icon>
+                </button>
+                <button *ngIf="logado()" mat-icon-button (click)="sair()">
+                    <mat-icon>logout</mat-icon>
+                </button>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Go Party!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li *ngIf="!logado()" class="nav-item"><a class="nav-link" routerLink="/registrar">Cadastre-se</a></li>
+                    <li *ngIf="!logado()" class="nav-item"><a class="nav-link" routerLink="/login">Acesse sua conta</a></li>
+                    <button  *ngIf="logado()" mat-icon-button routerLink="/dashboard">
+                        <mat-icon class="material-icons color_white">dashboard</mat-icon>
+                    </button>
+                    <button *ngIf="logado()" mat-icon-button (click)="sair()">
+                        <mat-icon class="material-icons color_white">logout</mat-icon>
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+</body>

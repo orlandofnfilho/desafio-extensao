@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Genero {
+  id     String   @id @default(uuid())
+  nome   String   @unique
+  Evento Evento[]
+
+  @@map("generos")
+}
+
+model Estabelecimento {
+  id     String   @id @default(uuid())
+  nome   String   @unique
+  urlLoc String
+  Evento Evento[]
+
+  @@map("estabelecimentos")
+}
+
+model Evento {
+  id                String           @id @default(uuid())
+  nome              String           @unique
+  atracao           String
+  data              DateTime
+  genero            Genero?          @relation(fields: [generoId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  generoId          String?
+  estabelecimento   Estabelecimento? @relation(fields: [estabelecimentoId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  estabelecimentoId String?
+  descricao         String           @db.Text
+  curtidas          Int?             @default(0)
+  urlImagem         String
+  urlIngresso       String
+  usuarios          UsuarioEvento[]
+
+  @@map("eventos")
+}
+
+model Usuario {
+  id      String          @id @default(uuid())
+  nome    String
+  email   String          @unique
+  senha   String
+  role    Role            @default(USUARIO)
+  eventos UsuarioEvento[]
+
+  @@map("usuarios")
+}
+
+model UsuarioEvento {
+  id        String  @id @default(uuid())
+  usuario   Usuario @relation(fields: [usuarioId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  usuarioId String
+  evento    Evento  @relation(fields: [eventoId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  eventoId  String
+
+  @@map("usuario_evento")
+}
+
+enum Role {
+  USUARIO
+  ADMIN
+}

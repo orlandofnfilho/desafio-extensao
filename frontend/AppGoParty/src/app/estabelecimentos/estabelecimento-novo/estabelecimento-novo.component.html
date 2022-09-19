@@ -1,0 +1,40 @@
+<app-dashboard></app-dashboard>
+<div class="content-wrapper">
+  <br><br><br>
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Inserir Estabelecimento</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Sistema de Gerenciamento de Estabelecimentos</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card-body p-0">
+              <div class="container">
+                <form class="example-container" [formGroup]="estabelecimentoForm" (ngSubmit)="addEstabelecimento(estabelecimentoForm.value)">
+                  <mat-form-field>
+                    <input matInput name="nome" placeholder="Nome do Estabelecimento" formControlName="nome">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput name="urlLoc" placeholder="Site do Local" formControlName="urlLoc">
+                  </mat-form-field>
+                  <button type="submit" [disabled]="!estabelecimentoForm.valid" mat-raised-button color="primary" >Adicionar</button>
+                </form>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

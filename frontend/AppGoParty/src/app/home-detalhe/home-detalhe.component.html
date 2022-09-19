@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<br><br><br>
+          
+            <div class="container">
+                <div class="text-center">
+                    
+                </div>
+            </div>
+  
+        <br><br><br>
+        
+        <div class="container">
+          <div class="col-lg-8">
+             <div class="card mb-4">
+                  <a href="#!"><img class="card-img-top" src="{{ evento.urlImagem }}" alt="..." /></a>
+                  <div class="card-body">
+                      <div class="medium text-muted">{{ evento.data | date : 'dd/MM/yyyy'}}</div>
+                      <div class="medium text-muted">{{evento.nome}}</div>
+                      <br>
+                      <h2 class="card-title">{{evento.atracao}}</h2>
+                      <p class="card-text">{{evento.descricao}}</p>
+                      <br>
+                      <p class="card-text"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                      </svg> {{ evento.estabelecimento.nome }}</p>
+                      <a class="btn btn-primary" href="{{evento.urlIngresso}}">Ingressos</a>
+                  </div>
+                </div>
+
+                  
