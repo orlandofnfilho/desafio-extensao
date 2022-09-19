@@ -24,7 +24,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 📁 Informações gerais
 
-Para executar o projeto primeiro precisa instalar as dependências necessárias da [API](https://git.gft.com/jofh/desafio-extensao/-/tree/backend-develop) de eventos e da aplicação Angular [GoParty](https://git.gft.com/jofh/desafio-extensao/-/tree/front_angular_priscilla_neves).
+Para executar o projeto primeiro precisa instalar as dependências necessárias da [API](https://github.com/orlandofnfilho/desafio-extensao/tree/main/backend/goparty) de eventos e da aplicação Angular [GoParty](https://github.com/orlandofnfilho/desafio-extensao/tree/main/frontend/AppGoParty).
 
 ## 📌 Para executar a API:
 1 - Instalar dependências
